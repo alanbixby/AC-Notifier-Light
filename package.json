@@ -1,13 +1,14 @@
 {
-  "name": "philips-hue-integration",
+  "name": "ac-notifier-light",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "rimraf ./dist && tsc",
     "lint": "eslint ./src --ext .ts,.js",
     "start": "npm run lint && npm run build && node dist/index.js",
-    "start:dev": "nodemon"
+    "start:dev": "nodemon",
+    "setup": "npm run lint && npm run build && node dist/setup.js"
   },
   "keywords": [],
   "author": "",
@@ -15,7 +16,8 @@
   "dependencies": {
     "chalk": "^4.1.1",
     "dotenv": "^10.0.0",
-    "node-hue-api": "*"
+    "node-hue-api": "^5.0.0-beta.2",
+    "tplink-smarthome-api": "^3.3.0"
   },
   "devDependencies": {
     "@types/node": "^15.6.1",
